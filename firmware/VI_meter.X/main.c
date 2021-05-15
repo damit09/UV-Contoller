@@ -36,6 +36,8 @@
 #pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
 //=====================================================================================================================================
+#define MIN_VALID_COUNT 80
+
 void init_oscillater(void);
 void init_gpio(void);
 void fill_display_buff(void);
@@ -68,7 +70,7 @@ int main(int argc, char** argv) {
             scan_adc_chnl();
 //            fill_display_buff();
             fill_buffer_cntr++;
-            if(fill_buffer_cntr >= 40){
+            if(MIN_VALID_COUNT <= fill_buffer_cntr){
                 fill_buffer_cntr = 0;
                 fill_display_buff();
             }
