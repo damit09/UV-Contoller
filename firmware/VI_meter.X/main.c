@@ -63,8 +63,6 @@ int main(int argc, char** argv) {
     LATA = 0x08;
     
     while(1) {
-//        for(i = 0;i <= 60000;i++);
-//        LATBbits.LATB7 ^= 1;
         if(flag_scan_adc){
             flag_scan_adc = 0;
             scan_adc_chnl();
@@ -75,7 +73,6 @@ int main(int argc, char** argv) {
                 fill_display_buff();
             }
         }
-
     }
 }
 //========================================================================================================================================
