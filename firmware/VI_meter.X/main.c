@@ -46,7 +46,7 @@ extern unsigned char flag_scan_adc;
 extern unsigned int total_offset,display_offset;
 extern float voltage,current;
 
-unsigned char volt_buff[5] = {0},current_buff[5] = {0};
+unsigned char volt_buff[5] = {0},current_buff[5] = {0},test_para = 0;
 //========================================================================================================================================
 int main(int argc, char** argv) {
     unsigned int fill_buffer_cntr = 0;
@@ -63,6 +63,10 @@ int main(int argc, char** argv) {
     LATA = 0x08;
     
     while(1) {
+        if(test_para)
+        {
+            test_para = 0;
+        }
         if(flag_scan_adc){
             flag_scan_adc = 0;
             scan_adc_chnl();
