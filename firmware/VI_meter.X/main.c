@@ -55,7 +55,7 @@ int main(int argc, char** argv) {
     init_gpio();
     init_timer();
     init_adc();
-    
+    init_uart1();
     INTCONbits.PEIE = 1;
     INTCONbits.GIE = 1;
 //    __delay_ms();
