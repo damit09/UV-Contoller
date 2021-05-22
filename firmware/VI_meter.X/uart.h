@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 void init_uart1(void);
-
+void init_uart2(void);
 
 #ifdef	__cplusplus
 }
